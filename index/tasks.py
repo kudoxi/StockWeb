@@ -3,8 +3,13 @@ from time import sleep
 import pandas as pd
 import tushare as ts
 from stock.models import  *
+import numpy as np
 from celery import shared_task
-#同时启动：celery -A StockProject worker -b -l info
+import logging
+from datetime import datetime as dt
+from stock.models import *
+#同时启动：celery -A StockProject worker -B -l info
+#
 
 #################################　异步任务
 ## 单独启动：celery -A StockProject worker -l info
@@ -19,17 +24,39 @@ def start_running(nums):
 
 #################################　定时任务
 # 单独启动：celery -A StockProject beat -l info
-@app.task
+#
+@app.task(name='deploy.tasks.get_stockinfo')
 def get_stockinfo():
+    print("开始存入")
     stocklist = ts.get_stock_basics()
-    for k,v in enumerate(stocklist):
-        for k2 ,v2 in enumerate(stocklist[v]):
+    for i in range(len(stocklist['name'])):
+        print(stocklist.index[i])
+        dict2 = {}
+        res = Stock.objects.filter(code=stocklist.index[i])
+        useful_column = ['code','name','industry','industry','area','pe','outstanding','totals','totalAssets','liquidAssets',
+                         'fixedAssets','reserved','reservedPerShare','esp','bvps','pb','timeToMarket']
+        if not res.exists():
+            for k, v in enumerate(stocklist):
+                dict2['code'] = stocklist.index[i]
+                if v in useful_column:
+                    if v == 'timeToMarket':
+                        #时间的特殊处理
+                        string = str(stocklist[v][i])
+                        stlist = list(string)
+                        if len(stlist) == 8:
+                            newlist = np.insert(stlist, [4, 6], ['-', '-'])
+                            new_str = "".join(newlist)
+                            ft = dt.strptime(new_str, '%Y-%m-%d')
+                            dict2[v] = ft
+                    else:
+                        dict2[v] = stocklist[v][i]
 
-            print(k,k2,v,v2)
+            Stock.objects.create(**dict2)
+
+
     '''
-    for k, v in enumerate(stocklist):
         
-        
+    MyModel.objects.create(**data_dict)
     name industry area      pe  outstanding  totals  totalAssets  liquidAssets  fixedAssets  reserved  ...  bvps    pb  timeToMarket       undp  perundp    rev  profit    gpr   npr   holders
 code                                                                                                       ...                                                                                    
 300772   N运达     电气设备   浙江   75.70         0.73    2.94    657106.19     430567.56     55779.23  31323.65  ...  4.41  2.13      20190426   37977.80     1.29   0.00    0.00  16.60  1.34  138344.0

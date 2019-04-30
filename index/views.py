@@ -3,6 +3,10 @@ from django.http import HttpResponse,request
 from time import sleep
 from .tasks import start_running
 import tushare as ts
+import numpy as np
+from datetime import datetime as dt
+from stock.models import *
+import logging
 # Create your views here.
 def index(req):
     #df = ts.realtime_boxoffice()
@@ -19,12 +23,33 @@ def ads(req):
 #获取股票数据
 def stockinfo(req):
     print('>=====开始获取股票=====<')
+    #stocklist = ts.get_stock_basics()
+    dict = {}
+    #print("code:",stocklist.index[0])
+    #for i in range(len(stocklist['name'])):
+
+    '''
     stocklist = ts.get_stock_basics()
-    for k,v in enumerate(stocklist):
-        if k < 2:
-            for k2 ,v2 in enumerate(stocklist[v]):
-                if k2 <10:
-                    print(k,k2,v,v2)
+    for i in range(len(stocklist['name'])):
+        print(stocklist.index[i])
+        dict2 = {}
+        res = Stock.objects.filter(code=stocklist.index[i])
+        if not res.exists():
+            for k, v in enumerate(stocklist):
+                if v == 'timeToMarket':
+                    # 时间的特殊处理
+                    string = str(stocklist[v][i])
+                    stlist = list(string)
+                    if len(stlist) == 8:
+                        newlist = np.insert(stlist, [4, 6], ['-', '-'])
+                        new_str = "".join(newlist)
+                        ft = dt.strptime(new_str, '%Y-%m-%d')
+                        dict2[v] = ft
+                else:
+                    dict2[v] = stocklist[v][i]
+            # logger = logging.getLogger('django')
+            # logger.info(dict2)
+    '''
     #for i in range(10):
     #    print('>>',end='')
     #    sleep(0.1)

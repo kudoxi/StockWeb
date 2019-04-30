@@ -1,0 +1,128 @@
+[2019-04-30 02:35:19,210][Thread-4:140510728455936][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /stockinfo/]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tarena/PycharmProjects/StockProject/index/views.py", line 29, in stockinfo
+    dict.append(dict2)
+AttributeError: 'dict' object has no attribute 'append'
+[2019-04-30 02:35:19,382][Thread-4:140510728455936][task_id:django.server][basehttp.py:124][ERROR]["GET /stockinfo/ HTTP/1.1" 500 18482]
+[2019-04-30 02:39:30,831][Thread-4:140424005207808][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /stockinfo/]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tarena/PycharmProjects/StockProject/index/views.py", line 27, in stockinfo
+    ft = dt.strptime(str,'%Y-%m-%d')
+  File "/usr/lib/python3.5/_strptime.py", line 510, in _strptime_datetime
+    tt, fraction = _strptime(data_string, format)
+  File "/usr/lib/python3.5/_strptime.py", line 343, in _strptime
+    (data_string, format))
+ValueError: time data '19931018' does not match format '%Y-%m-%d'
+[2019-04-30 02:39:31,064][Thread-4:140424005207808][task_id:django.server][basehttp.py:124][ERROR]["GET /stockinfo/ HTTP/1.1" 500 18735]
+[2019-04-30 02:44:24,044][Thread-4:140283281344256][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /stockinfo/]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tarena/PycharmProjects/StockProject/index/views.py", line 28, in stockinfo
+    newlist = np.insert(stlist,[4,6])
+TypeError: insert() missing 1 required positional argument: 'values'
+[2019-04-30 02:44:24,130][Thread-4:140283281344256][task_id:django.server][basehttp.py:124][ERROR]["GET /stockinfo/ HTTP/1.1" 500 18515]
+[2019-04-30 03:24:52,122][Thread-4:140455092877056][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /stockinfo/]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/pandas/core/indexes/base.py", line 2657, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 132, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1601, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1608, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'code'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tarena/PycharmProjects/StockProject/index/views.py", line 27, in stockinfo
+    print("code:",stocklist['code'][i])
+  File "/usr/local/lib/python3.5/dist-packages/pandas/core/frame.py", line 2927, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/usr/local/lib/python3.5/dist-packages/pandas/core/indexes/base.py", line 2659, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 132, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1601, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1608, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'code'
+[2019-04-30 03:24:52,332][Thread-4:140455092877056][task_id:django.server][basehttp.py:124][ERROR]["GET /stockinfo/ HTTP/1.1" 500 18967]
+[2019-04-30 03:25:37,585][Thread-4:139760046372608][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /stockinfo/]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/pandas/core/indexes/base.py", line 2657, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 132, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1601, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1608, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'code'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tarena/PycharmProjects/StockProject/index/views.py", line 26, in stockinfo
+    print("code:",stocklist['code'])
+  File "/usr/local/lib/python3.5/dist-packages/pandas/core/frame.py", line 2927, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/usr/local/lib/python3.5/dist-packages/pandas/core/indexes/base.py", line 2659, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 132, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1601, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1608, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'code'
+[2019-04-30 03:25:37,733][Thread-4:139760046372608][task_id:django.server][basehttp.py:124][ERROR]["GET /stockinfo/ HTTP/1.1" 500 18961]
+[2019-04-30 03:32:36,224][Thread-4:140243559798528][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /stockinfo/]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tarena/PycharmProjects/StockProject/index/views.py", line 40, in stockinfo
+    stlist = list(string)
+TypeError: 'numpy.int64' object is not iterable
+[2019-04-30 03:32:36,334][Thread-4:140243559798528][task_id:django.server][basehttp.py:124][ERROR]["GET /stockinfo/ HTTP/1.1" 500 18477]
+[2019-04-30 03:33:55,547][Thread-4:140221219862272][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /stockinfo/]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tarena/PycharmProjects/StockProject/index/views.py", line 40, in stockinfo
+    newlist = np.insert(stlist, [4, 6], ['-', '-'])
+  File "/usr/local/lib/python3.5/dist-packages/numpy/lib/function_base.py", line 4623, in insert
+    old_mask[indices] = False
+IndexError: index 4 is out of bounds for axis 0 with size 3
+[2019-04-30 03:33:55,743][Thread-4:140221219862272][task_id:django.server][basehttp.py:124][ERROR]["GET /stockinfo/ HTTP/1.1" 500 18649]

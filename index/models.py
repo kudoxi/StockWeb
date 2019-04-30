@@ -11,6 +11,14 @@ class AdLink(models.Model):
     ad_link = models.URLField(verbose_name='广告链接')
     isDelete = models.BooleanField(default=False,verbose_name='是否删除')
 
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "广告"
+        verbose_name_plural = verbose_name
+
+
 
 
 

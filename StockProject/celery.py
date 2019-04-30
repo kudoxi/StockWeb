@@ -26,7 +26,7 @@ app.conf.update(
             #每20秒执行一次get_stockinfo函数，并传了两个参数5和6
             'sum-task': {
                 'task': 'deploy.tasks.get_stockinfo',
-                'schedule':  timedelta(seconds=20),
+                'schedule':  timedelta(seconds=120),
                 #'args': (5, 6)
             },
             #每周一早上4：30执行report函数
@@ -39,7 +39,7 @@ app.conf.update(
 
 app.autodiscover_tasks(settings.INSTALLED_APPS)
 
-#执行celery -A SecondhandsCar worker --loglevel=DEBUG
+#执行celery -A StockProject worker --loglevel=DEBUG
 @app.task(bind=True)
 def debug_task(self):
     print('Request: {0!r}'.format(self.request))
