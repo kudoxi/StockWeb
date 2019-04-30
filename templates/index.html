@@ -12,8 +12,8 @@
     }
 
     .swiper-container .swiper-slide{
-        height:400px;
-        line-height: 400px;
+        height:260px;
+        line-height: 260px;
         text-align: center;
         width:100%;
         background-repeat:no-repeat;
@@ -55,9 +55,9 @@
   </div>
     <div class="swiper-pagination"></div>
 
-     <!-- 如果需要导航按钮 -->
+     <!-- 如果需要导航按钮
     <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <div class="swiper-button-next"></div>-->
 </div>
     <!-- echarts -->
 <div id="main" style="height:400px;"></div>
@@ -87,10 +87,10 @@
                         pagination: {
                           el: '.swiper-pagination',
                         },
-                        navigation: {
-                          nextEl: '.swiper-button-next',
-                          prevEl: '.swiper-button-prev',
-                        },
+                        //navigation: {
+                        //  nextEl: '.swiper-button-next',
+                        //  prevEl: '.swiper-button-prev',
+                        //},
 
                     //其他设置
                   });
@@ -98,9 +98,9 @@
                   console.log(e)
               }
           });
-          //实时获取数据，存入mongodb,redis
+          //实时获取股票数据,默认上证
         　$.ajax({
-                url:'{% url "stockinfo" %}',
+                url:'{% url "stock_basics" %}',
                 type:"GET",
                 success:function () {
 

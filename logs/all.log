@@ -3783,3 +3783,524 @@ IndexError: index 4 is out of bounds for axis 0 with size 3
 [2019-04-30 03:40:31,294][Thread-4:140291143821056][task_id:django][views.py:49][INFO][{'name': '宝丰能源', 'gpr': 46.9, 'esp': 0.0, 'area': '宁夏', 'totalAssets': 2682915.5, 'fixedAssets': 1506633.5, 'bvps': 0.0, 'pb': 0.0, 'perundp': 0.0, 'totals': 0.0, 'industry': '化工原料', 'reserved': 112.73, 'outstanding': 0.0, 'liquidAssets': 227573.42, 'reservedPerShare': 0.0, 'profit': 26.41, 'pe': 0.0, 'undp': 624746.19, 'rev': 6.11, 'npr': 28.31, 'holders': 0.0}]
 [2019-04-30 03:40:31,301][Thread-4:140291143821056][task_id:django][views.py:49][INFO][{'gpr': 24.39, 'esp': -0.29, 'rev': -41.86, 'totalAssets': 196641.86, 'fixedAssets': 7645.22, 'industry': '通信设备', 'timeToMarket': datetime.datetime(1993, 10, 18, 0, 0), 'reservedPerShare': 2.27, 'profit': 37.61, 'undp': -111547.75, 'npr': -58.48, 'name': '*ST上普', 'area': '上海', 'pb': 0.0, 'bvps': 0.66, 'reserved': 86854.71, 'totals': 3.82, 'outstanding': 2.57, 'liquidAssets': 39559.53, 'perundp': -2.92, 'pe': 0.0, 'holders': 36481.0}]
 [2019-04-30 03:40:31,301][Thread-4:140291143821056][task_id:django.server][basehttp.py:124][INFO]["GET /stockinfo/ HTTP/1.1" 200 26]
+[2019-04-30 06:17:58,053][Thread-2:140557996504832][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 507, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tarena/PycharmProjects/StockProject/index/views.py", line 17, in index
+    return render(req,'index.html')
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 154, in render
+    compiled_parent = self.get_parent(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 151, in get_parent
+    return self.find_template(parent, context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 131, in find_template
+    template_name, skip=history,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 509, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 571, in invalid_block_tag
+    "or load this tag?" % (token.lineno, command)
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 6: 'static'. Did you forget to register or load this tag?
+[2019-04-30 06:17:59,944][Thread-2:140557996504832][task_id:django.server][basehttp.py:124][ERROR]["GET / HTTP/1.1" 500 167326]
+[2019-04-30 06:22:10,281][Thread-4:140557987849984][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tarena/PycharmProjects/StockProject/index/views.py", line 17, in index
+    return render(req,'index.html')
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'login' not found. 'login' is not a valid view function or pattern name.
+[2019-04-30 06:22:10,494][Thread-4:140557987849984][task_id:django.server][basehttp.py:124][ERROR]["GET / HTTP/1.1" 500 148078]
+[2019-04-30 06:24:19,623][Thread-2:139703350642432][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tarena/PycharmProjects/StockProject/index/views.py", line 17, in index
+    return render(req,'index.html')
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'userinfo/login' not found. 'userinfo/login' is not a valid view function or pattern name.
+[2019-04-30 06:24:19,813][Thread-2:139703350642432][task_id:django.server][basehttp.py:124][ERROR]["GET / HTTP/1.1" 500 148294]
+[2019-04-30 06:25:02,184][Thread-2:140253604398848][task_id:django.server][basehttp.py:124][INFO]["GET /userinfo/login%EF%BC%8F HTTP/1.1" 200 3]
+[2019-04-30 06:25:05,727][Thread-3:140253596006144][task_id:django.server][basehttp.py:124][INFO]["GET /userinfo/login HTTP/1.1" 200 3]
+[2019-04-30 06:25:15,800][Thread-6:140253604398848][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tarena/PycharmProjects/StockProject/index/views.py", line 17, in index
+    return render(req,'index.html')
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'userinfo/login/' not found. 'userinfo/login/' is not a valid view function or pattern name.
+[2019-04-30 06:25:16,057][Thread-6:140253604398848][task_id:django.server][basehttp.py:124][ERROR]["GET / HTTP/1.1" 500 148181]
+[2019-04-30 06:25:50,653][Thread-8:140253604398848][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tarena/PycharmProjects/StockProject/index/views.py", line 17, in index
+    return render(req,'index.html')
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '/userinfo/login' not found. '/userinfo/login' is not a valid view function or pattern name.
+[2019-04-30 06:25:50,852][Thread-8:140253604398848][task_id:django.server][basehttp.py:124][ERROR]["GET / HTTP/1.1" 500 148316]
+[2019-04-30 06:26:03,996][Thread-10:140253596006144][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tarena/PycharmProjects/StockProject/index/views.py", line 17, in index
+    return render(req,'index.html')
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'userinfo/login' not found. 'userinfo/login' is not a valid view function or pattern name.
+[2019-04-30 06:26:04,242][Thread-10:140253596006144][task_id:django.server][basehttp.py:124][ERROR]["GET / HTTP/1.1" 500 148294]
+[2019-04-30 06:26:28,325][Thread-2:140158214260480][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tarena/PycharmProjects/StockProject/index/views.py", line 17, in index
+    return render(req,'index.html')
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'userinfo/login' not found. 'userinfo/login' is not a valid view function or pattern name.
+[2019-04-30 06:26:28,404][Thread-2:140158214260480][task_id:django.server][basehttp.py:124][ERROR]["GET / HTTP/1.1" 500 148294]
+[2019-04-30 06:26:37,205][Thread-3:140158137530112][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tarena/PycharmProjects/StockProject/index/views.py", line 17, in index
+    return render(req,'index.html')
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'userinfo/login/' not found. 'userinfo/login/' is not a valid view function or pattern name.
+[2019-04-30 06:26:37,541][Thread-3:140158137530112][task_id:django.server][basehttp.py:124][ERROR]["GET / HTTP/1.1" 500 148319]
+[2019-04-30 06:27:02,259][Thread-5:140158214260480][task_id:django.server][basehttp.py:124][INFO]["GET /userinfo/login HTTP/1.1" 301 0]
+[2019-04-30 06:27:02,315][Thread-6:140158214260480][task_id:django.server][basehttp.py:124][INFO]["GET /userinfo/login/ HTTP/1.1" 200 3]
+[2019-04-30 06:27:28,714][Thread-8:140158137530112][task_id:django.server][basehttp.py:124][INFO]["GET /userinfo/login/ HTTP/1.1" 200 3]
+[2019-04-30 06:27:32,815][Thread-9:140158137530112][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tarena/PycharmProjects/StockProject/index/views.py", line 17, in index
+    return render(req,'index.html')
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'login/' not found. 'login/' is not a valid view function or pattern name.
+[2019-04-30 06:27:33,036][Thread-9:140158137530112][task_id:django.server][basehttp.py:124][ERROR]["GET / HTTP/1.1" 500 147985]
+[2019-04-30 06:27:38,970][Thread-11:140158214260480][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tarena/PycharmProjects/StockProject/index/views.py", line 17, in index
+    return render(req,'index.html')
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'userinfo/register/' not found. 'userinfo/register/' is not a valid view function or pattern name.
+[2019-04-30 06:27:39,157][Thread-11:140158214260480][task_id:django.server][basehttp.py:124][ERROR]["GET / HTTP/1.1" 500 148170]
+[2019-04-30 06:27:46,030][Thread-12:140158137530112][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tarena/PycharmProjects/StockProject/index/views.py", line 17, in index
+    return render(req,'index.html')
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'usercenter' not found. 'usercenter' is not a valid view function or pattern name.
+[2019-04-30 06:27:46,469][Thread-12:140158137530112][task_id:django.server][basehttp.py:124][ERROR]["GET / HTTP/1.1" 500 148736]
+[2019-04-30 06:54:37,360][Thread-2:140526296401664][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 16330]
+[2019-04-30 06:54:37,427][Thread-3:140526288008960][task_id:django.server][basehttp.py:124][INFO]["GET /static/assets/css/main.css HTTP/1.1" 200 59037]
+[2019-04-30 06:54:37,494][Thread-4:140526288008960][task_id:django.server][basehttp.py:124][INFO]["GET /static/images/logo.svg HTTP/1.1" 200 1259]
+[2019-04-30 06:54:37,683][Thread-5:140526288008960][task_id:django.server][basehttp.py:124][INFO]["GET /static/assets/js/jquery.min.js HTTP/1.1" 200 86927]
+[2019-04-30 06:54:37,729][Thread-7:140526288008960][task_id:django.server][basehttp.py:124][INFO]["GET /static/assets/js/browser.min.js HTTP/1.1" 200 1851]
+[2019-04-30 06:54:37,730][Thread-6:140526296401664][task_id:django.server][basehttp.py:124][INFO]["GET /static/assets/css/font-awesome.min.css HTTP/1.1" 200 31000]
+[2019-04-30 06:54:37,970][Thread-8:140526296401664][task_id:django.server][basehttp.py:124][INFO]["GET /static/assets/js/breakpoints.min.js HTTP/1.1" 200 2439]
+[2019-04-30 06:54:37,975][Thread-9:140526288008960][task_id:django.server][basehttp.py:124][INFO]["GET /static/assets/js/util.js HTTP/1.1" 200 12433]
+[2019-04-30 06:54:37,987][Thread-10:140526279354112][task_id:django.server][basehttp.py:124][INFO]["GET /static/assets/js/main.js HTTP/1.1" 200 3489]
+[2019-04-30 06:54:38,803][Thread-11:140526279354112][task_id:django.server][basehttp.py:124][INFO]["GET /static/assets/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160]
+[2019-04-30 06:54:39,046][Thread-12:140526279354112][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 06:55:20,464][Thread-13:140526279354112][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 16337]
+[2019-04-30 06:55:20,935][Thread-14:140526288008960][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 07:04:42,543][Thread-2:140121526793984][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 16359]
+[2019-04-30 07:04:43,496][Thread-3:140121518401280][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 07:05:58,829][Thread-4:140121518401280][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 16358]
+[2019-04-30 07:05:59,208][Thread-5:140121526793984][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 07:33:00,143][Thread-2:139897778976512][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2019-04-30 07:33:00,178][Thread-2:139897778976512][task_id:django.server][basehttp.py:124][WARNING]["GET /favicon.ico HTTP/1.1" 404 2579]
+[2019-04-30 07:35:38,966][Thread-4:139897770583808][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 16366]
+[2019-04-30 07:35:39,598][Thread-5:139897778976512][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 07:39:18,362][Thread-6:139897778976512][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 16467]
+[2019-04-30 07:39:19,685][Thread-7:139897770583808][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 07:41:22,292][Thread-8:139897770583808][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 16423]
+[2019-04-30 07:41:23,340][Thread-9:139897770583808][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 08:08:31,397][Thread-2:139951346730752][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 16969]
+[2019-04-30 08:08:32,261][Thread-3:139951338075904][task_id:django.server][basehttp.py:124][INFO]["GET /static/image/search.png HTTP/1.1" 200 8187]
+[2019-04-30 08:08:32,818][Thread-4:139951338075904][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 08:08:43,608][Thread-5:139951338075904][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 16969]
+[2019-04-30 08:08:45,408][Thread-6:139951338075904][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 08:09:21,513][Thread-8:139951346730752][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 16969]
+[2019-04-30 08:09:22,263][Thread-9:139951346730752][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 08:10:12,712][Thread-11:139951338075904][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 16969]
+[2019-04-30 08:10:13,288][Thread-12:139951346730752][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 08:12:16,622][Thread-13:139951346730752][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 17026]
+[2019-04-30 08:12:17,115][Thread-14:139951338075904][task_id:django.server][basehttp.py:124][INFO]["GET /static/image/search.png HTTP/1.1" 304 0]
+[2019-04-30 08:12:17,322][Thread-15:139951338075904][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 08:12:18,461][Thread-16:139951338075904][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 17026]
+[2019-04-30 08:12:19,008][Thread-17:139951338075904][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 08:12:20,214][Thread-18:139951346730752][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 17026]
+[2019-04-30 08:12:20,669][Thread-19:139951346730752][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 08:14:51,571][Thread-21:139951338075904][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 17087]
+[2019-04-30 08:14:52,382][Thread-22:139951346730752][task_id:django.server][basehttp.py:124][INFO]["GET /static/image/search.png HTTP/1.1" 304 0]
+[2019-04-30 08:14:52,759][Thread-23:139951346730752][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 08:14:55,318][Thread-24:139951346730752][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 17087]
+[2019-04-30 08:14:55,985][Thread-25:139951338075904][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 08:15:13,500][Thread-26:139951338075904][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 17074]
+[2019-04-30 08:15:14,438][Thread-27:139951338075904][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 08:15:16,453][Thread-28:139951346730752][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 17074]
+[2019-04-30 08:15:17,188][Thread-29:139951346730752][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 08:15:58,362][Thread-31:139951338075904][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 17108]
+[2019-04-30 08:15:58,897][Thread-32:139951346730752][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 09:42:09,294][Thread-2:140202286012160][task_id:django.server][basehttp.py:124][INFO]["GET /userinfo/login/ HTTP/1.1" 200 3]
+[2019-04-30 09:50:30,480][Thread-4:140202277619456][task_id:django.server][basehttp.py:124][INFO]["GET / HTTP/1.1" 200 17337]
+[2019-04-30 09:50:30,622][Thread-5:140202286012160][task_id:django.server][basehttp.py:124][INFO]["GET /static/js/jquery.min.js HTTP/1.1" 304 0]
+[2019-04-30 09:50:30,736][Thread-6:140202286012160][task_id:django.server][basehttp.py:124][INFO]["GET /static/image/search.png HTTP/1.1" 304 0]
+[2019-04-30 09:50:31,674][Thread-7:140202286012160][task_id:django.server][basehttp.py:124][INFO]["GET /ads/ HTTP/1.1" 200 3]
+[2019-04-30 09:50:31,677][Thread-8:140202286012160][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /stock_basics/]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view index.views.stock_basics didn't return an HttpResponse object. It returned None instead.
+[2019-04-30 09:50:32,036][Thread-8:140202286012160][task_id:django.server][basehttp.py:124][ERROR]["GET /stock_basics/ HTTP/1.1" 500 18308]

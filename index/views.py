@@ -9,12 +9,17 @@ from stock.models import *
 import logging
 # Create your views here.
 def index(req):
-    #df = ts.realtime_boxoffice()
-    #print(df)
-    #dg = ts.get_hist_data('000002')
-    #print(dg)
-    #return HttpResponse('index')
+    #显示实时数据
+
     return render(req,'index.html')
+
+def stock_basics(req):
+    code = req.GET.get("code",'')
+    code = req.GET.get("code")
+    if not code:
+        code = '1A0001'
+    df = ts.get_stock_basics('')
+    return HttpResponse(222)
 
 #获取广告
 def ads(req):
@@ -28,28 +33,7 @@ def stockinfo(req):
     #print("code:",stocklist.index[0])
     #for i in range(len(stocklist['name'])):
 
-    '''
-    stocklist = ts.get_stock_basics()
-    for i in range(len(stocklist['name'])):
-        print(stocklist.index[i])
-        dict2 = {}
-        res = Stock.objects.filter(code=stocklist.index[i])
-        if not res.exists():
-            for k, v in enumerate(stocklist):
-                if v == 'timeToMarket':
-                    # 时间的特殊处理
-                    string = str(stocklist[v][i])
-                    stlist = list(string)
-                    if len(stlist) == 8:
-                        newlist = np.insert(stlist, [4, 6], ['-', '-'])
-                        new_str = "".join(newlist)
-                        ft = dt.strptime(new_str, '%Y-%m-%d')
-                        dict2[v] = ft
-                else:
-                    dict2[v] = stocklist[v][i]
-            # logger = logging.getLogger('django')
-            # logger.info(dict2)
-    '''
+
     #for i in range(10):
     #    print('>>',end='')
     #    sleep(0.1)
