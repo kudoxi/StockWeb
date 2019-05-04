@@ -1,5 +1,5 @@
 from django.db import models
-import mongoengine
+#import mongoengine
 # Create your models here.
 #class StockModel(mongoengine.Document):
 #     name = mongoengine.StringField(max_length=32)

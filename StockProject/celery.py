@@ -20,7 +20,7 @@ app.config_from_object('django.conf:settings')
 app.conf.update(
 
     # 本地Redis服务器
-    BROKER_URL='redis://176.23.1.213:6379/0',
+    BROKER_URL='redis://192.168.2.183:6379/0',
     #定时任务
     CELERYBEAT_SCHEDULE = {
             #每20秒执行一次get_stockinfo函数，并传了两个参数5和6

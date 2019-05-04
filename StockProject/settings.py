@@ -80,14 +80,14 @@ WSGI_APPLICATION = 'StockProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 #create database stock default charset utf8;
-from mongoengine import connect
-connect('stock', host='127.0.0.1', port=27017, alias='default')
+#from mongoengine import connect
+#connect('stock', host='127.0.0.1', port=27017, alias='default')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'stock',
         'USER':'root',
-        'PASSWORD':'123456',
+        'PASSWORD':'root',
         'HOST':'localhost',
         'PORT':3306
     }
@@ -131,8 +131,8 @@ USE_TZ = True
 import djcelery
 djcelery.setup_loader()
 
-BROKER_URL = 'redis://176.23.1.213:6379/0'
-CELERY_RESULT_BACKEND = 'redis://176.23.1.213:6379/0'
+BROKER_URL = 'redis://192.168.2.183:6379/0'#176.23.1.213
+CELERY_RESULT_BACKEND = 'redis://192.168.2.183:6379/0'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
